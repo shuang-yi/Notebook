@@ -1,3 +1,6 @@
+# .vimrc
+
+```
 "-----HELP:-------------------------------------------- !--{{
 " - - - display the vim PATH
 "   :set runtimepath?
@@ -9,12 +12,15 @@
 "   :command  :   all commands
 " !--}}
 " verbose >= 12 if you want to see details
-set verbose=0
-set nocompatible
-set shell=zsh\ -i
+
+
 
 "-pathogen	( plug-in manager )
 "execute pathogen#infect() 	
+
+set verbose=0
+set nocompatible
+set shell=zsh\ -i
 
 "- - - - - - - - - - - - - - -
 "- - - - - basic setting	!---{{
@@ -47,9 +53,12 @@ set ruler
 set number
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ [%L]:%P
 set guitablabel=(%N)%t
-colorscheme molokai
+" colorscheme molokai
+```
 
+# Other setting
 
+```
 "##performance
 "set hidden	"donot unload buffer when it is abandoned
 " remember last position
@@ -159,3 +168,5 @@ let g:neocomplcache_enable_at_startup = 1
 "~/.vim/bundle/snipmate-snippets/snippets/fortran.snippets
 "~/.vim/bundle/fortran/ftplugin/fortran.vim
 "~/.vim/bundle/fortran/after/indent/fortran.vim
+```
+
