@@ -1,0 +1,19 @@
+## makecpt
+
+```
+gmt makecpt -T$cran -Cpolar -G0/NaN -D -Z > $cptfile1
+```
+
+- -G 截断cpt文件，NaN表示默认。
+- -D: outliner
+- -Z: continue
+- -I: 反转颜色顺序
+
+```
+if [ ${#cran} -gt 4 ]; then
+	gmt makecpt -T$cran -Cjet -Z -D> $cptfile
+  else
+	gmt grd2cpt $grd -T= -Cjet -Z > $cptfile
+	#-T: - for R =|zmin|, + for R = |zmax|, _ for R = min(|zmin|, |zmax|), or = for R = max(|zmin|, |zmax|)
+  fi
+  ```

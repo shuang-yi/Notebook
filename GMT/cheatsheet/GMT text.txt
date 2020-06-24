@@ -1,0 +1,47 @@
+## pstext
+
+```bash
+gmt pstext -F+jBL -Jx1c -R0/100/0/100 -Gred -K -O -N >> $ps << EOF
+0.8 11.1 @:14:(a) Trend of GWS
+17 11.3  @:12:(b) Trend of TTWS
+17 5.5 @:12:(c) Trend of SWS
+EOF
+```
+
+### 参数
+
+- -G	填充色
+- -F[+a[angle]][+c[justify]][+f[font]][+h][+j[justify]][+l]
+默认情况下，文字水平，字体属性来自FONT_ANNOT_PRIMARY，并且以经纬度为中心。开关后面不接属性，将从文件中读入相应属性。
+	- +f to set the font (size,fontname,color)：-F+j+f7p,1,black=~0.5p,white, 白色描边
+	- +h 字符内容为最近的 segment header 
+	- +l 字符内容为最近的segment label
+	- +c  从-R范围得到经纬度，如-F+cTL，得到画图范围左上角经纬度。
+	- `+j [T|M|B][L|C|R]` 甜面包两侧肉
+
+	例如：
+
+	`-F+f12p,Helvetica-Bold,red+j+a`，字体已经设置好，另外两个从文件中读入。文件每列依次表示为：经度，纬度，对其，角度，字符内容
+
+- -W 文字周围矩形框
+- -C 矩形框放大尺寸，如15%，2p
+- -D	偏移, -Djdx/dy+v, 相对于参考点的偏移，+v划线连得来
+- -N	超出边界不剪裁
+
+### 格式设定
+
+字符内容支持直接设定：
+@~			切换symbol字体; X: @~\264@~; 减号：@~\055@~; mu: @~\155@~
+@%no%		设定字号，@%%取消
+@-			切换下标
+@+			切换上标
+@#			切换小型大写字母
+@;color;		字体颜色，@;;取消
+@:size:		字体大小，@::取消
+@_			下划线
+
+### 字体列表
+![](file:///Users/Yish/Documents/collections_yi/Files/Pictures/gmt-fontlist.png)
+
+### code
+![](file:///Users/Yish/Documents/collections_yi/Files/Pictures/gmt-Octal%20Codes.png)

@@ -1,0 +1,17 @@
+## psxy
+
+```shell
+gmt psxy tmp-1.txt -R -J -Ss0.15c -W0.1p,gray@50 -O -K -Y-10c >> $ps
+```
+
+* `-Ey+w7p+p0.5p`画y方向误差棒，+w为误差帽宽度，+p为误差棒画笔
+
+### psxy画箭头 arrow
+
+```shell
+
+```
+
+- -SV: 起点经度/纬度/转角/长度
+	- +e在尾部加箭头
+

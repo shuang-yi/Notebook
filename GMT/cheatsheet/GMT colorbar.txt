@@ -1,0 +1,27 @@
+## psscale/colorbar
+
+```
+# plot
+gmt psscale -C$cptfile -B$barinfo -Dx0/$y_shift+w$width/0.5+e+h  -O -K >> $ps
+```
+
+注意这里-Dx表示图纸坐标，参考点变为左下角，+w后面是尺寸，+e是超范围的箭头指示
+
+-D[]-ml : 移动标注到colorbar的另一边
+
+```bash
+# colorbar
+  if [ $ibar -eq 1 ]; then # horizontal bar
+	# D : gap/2, down, width, height
+	x_shift=$( echo "scale=3;0"|bc )
+	y_shift=$( echo "scale=3;-$gap*0.8"|bc )
+	gmt psscale -C$cptfile -B$cinfo -Dx$x_shift/$y_shift+w$width/0.5c+e+h  -O -K >> $ps
+  elif [ $ibar -eq 2 ]; then # vertical bar
+	# D : gap/2, down, width, height
+	x_shift=$( echo "scale=3;$width+$gap/2"|bc )
+	y_shift=$( echo "scale=3;0"|bc )
+	gmt psscale -C$cptfile -B$cinfo -Dx$x_shift/$y_shift+w$width/0.5c  -O -K >> $ps
+  fi
+```
+
+-G: 剪裁colorbar

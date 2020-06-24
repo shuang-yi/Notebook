@@ -1,0 +1,60 @@
+# module模块
+用`import modulename`调用，会在系统路径下查找`modulename.py`
+为了使调用更快，可以使用字节编译的`.pyc`文件，这个文件也是与平台无关的。
+
+## 调用sys模块
+这里调用一个很常见的`sys`模块，`.argv`表示文件名（argv[0]），输入变量（从argv[1]开始）
+
+```python
+import sys                                                                      
+print 'The command line arguments are:'
+
+for i in sys.argv:
+  print i
+
+print '\n\n The path are', sys.path,'\n'
+```
+为了避免每次都打sys，可以把sys的变量导入到自己的程序中
+导入argv：`from sys import argv`
+导入所有：`from sys import *`
+但是这种用法慎用，会使代码更易读，并避免名称冲突
+
+
+## 定义自己的模块
+### 定义
+定义了一个函数和一个变量
+
+```python
+#!/usr/bin/python
+def sayhi():
+	print 'Hi, this is mymodule speaking.'
+	
+version = '0.1'
+
+```
+### 调用
+
+```python
+#!/usr/bin/python
+import mymodule
+mymodule.sayhi()
+print 'Version', mymodule.version
+```
+输出：
+
+```python
+$ python mymodule_demo.py 
+Hi, this is mymodule speaking. 
+Version 0.1
+```
+
+## 模块是否被调用
+if __name__ == '__main__':
+    print 'This program is being run by itself'
+else:
+    print 'I am being imported from another module'
+    
+## 查看模块所有方法和变量
+dir(module_name)
+
+dir() 返回当前环境中的所有变量

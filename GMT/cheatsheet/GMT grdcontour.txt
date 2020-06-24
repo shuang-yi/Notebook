@@ -1,0 +1,7 @@
+## grdcontour
+
+`gmt grdcontour $grd -C0.5 -A1+g220 -Gn1 -R -J -K -O >> $ps`
+
+- -C 等高线间隔
+- -A 标注数值间隔，+g标注文字背景色
+- -G 标注距离，n1，每个等高线标注一次。

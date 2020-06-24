@@ -1,0 +1,70 @@
+## 函数
+
+```python
+def printMax(a, b):   			#关键字`def`定义，变量传递的是形参。
+	if a > b:
+		print a, 'is maximum' 
+		return a 			# return是返回值，默认返回`return None`
+	else:
+		print b, 'is maximum'
+		return b
+	
+						# 通过缩进结束
+
+printMax(3, 4) 				# directly give literal values
+```
+### 全局变量
+
+同时声明多个全局变量，`global x,y,z`
+
+```python
+def func(): 
+	global x, y 			# 函数默认是局部变量，如果要声明全局变量，需要关键字`global`
+	print 'x is', x
+	x= 2
+	print 'Changed local x to', x
+	
+x = 50
+func()
+print 'Value of x is', x
+```
+
+### 设定参数预设值
+参数的个数是可选的，缺省的参数预先在定义时用`=`设定。预设的参数只能放在后面。
+
+```python
+def say(message, times = 1): 
+	print message * times
+
+say('Hello') 
+say('World', 5)
+```
+### 打乱顺序赋值
+函数调用时，指定变量名称可以不按顺序赋值。这种方法可以结合上面的”预设参数值“使用
+
+```python
+def func(a, b=5, c=10):
+	print 'a is', a, 'and b is', b, 'and c is', c
+	
+func(3, 7) 
+func(25, c=24) 
+func(c=50, a=100)
+```
+### 函数帮助文档
+函数开头用三个引号引起来的内容为帮助文档，通过其类`.__doc__`可以调用，用帮助函数help(fun_name)也是调用这个内容。
+
+```python
+def printMax(x, y):
+	'''Prints the maximum of two numbers.
+	The two values must be integers.'''
+	x = int(x) # convert to integers, if possible y = int(y)
+	if x > y:
+		print x, 'is maximum'
+	else:
+		print y, 'is maximum'
+
+printMax(3, 5)
+
+print printMax.__doc__
+```
+

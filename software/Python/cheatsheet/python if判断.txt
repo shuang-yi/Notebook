@@ -1,0 +1,23 @@
+# if 判断
+最简单的if语句:
+
+```
+if True:
+	print 'Yes, it is true'
+```
+
+一个if-elif-else例子，注意最后的那句每次都会执行
+
+```
+number = 23
+guess = int(raw_input('Enter an integer : '))
+
+if guess == number:
+	print 'Congratulations, you guessed it.' 
+elif guess < number:
+	print 'No, it is a little higher than that' 
+else:
+	print 'No, it is a little lower than that'
+print 'Done'
+# This last statement is always executed, after the if statement is executed
+```

@@ -1,0 +1,47 @@
+## pslegend
+
+```
+gmt pslegend -R -J -DjBL+o0.5c+w3.2c+l1.2 -F+p0.5p,black -K -O >>$ps <<EOF
+N 1
+S 3p s 3p white 1p,$color1 0.3c M1: no correct
+S 3p s 3p white 1p,$color2 0.3c M2: uniform correct
+S 3p s 3p white 1p,$color3 0.3c M3: non-uniform cor.
+S 1p r 6p,1p white 1p,255/128/129 0.3c ocean mass
+S 1p r 6p,0.5p white 0.25p,black 0.3c smoothed GSM
+S 0.1i - 0.15i - 0.25p,- 0.3i A contour
+EOF
+```
+
+http://gmt.soest.hawaii.edu/doc/5.3.2/pslegend.html
+
+### -D
+
+**-D**[**g**|**j**|**J**|**n**|**x**]*refpoint***+w***width*[/*height*][**+j***justify*][**+l***spacing*][**+o***dx*[/*dy*]]
+
+参考点
+
+(1)  **-Dg1/2** 地图里的坐标 
+
+(2) **-DjBL+o0.5c** 相对地图左下角偏移为0.5c，不加+o，默认偏移为0，这里会自动把这里的相对参考点赋值给后面的`+j`参数
+
+(3) **-Dn0.1/0.1**: 相对坐标 
+
+(4) **-Dx1c/1c** ,依照-R和-J指定的偏移
+
+**+w***width*[/*height*] 指定宽度和高度，如果不指定高度，则根据内容自动计算
+
+**+j**指定以图例框的哪个点为参考点，默认为左下角（BL）
+
+**+l** 指定行距 
+
+### -C
+
+内部边框和内容间的留白
+
+### -F
+
+`-F[+gfill][+p[pen]]`
+
+边框和填充色
+
+如果没有设定这个命令，用`MAP_FRAME_PEN`画一个边框，+p指定边框画笔

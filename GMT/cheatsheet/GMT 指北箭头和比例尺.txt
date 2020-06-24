@@ -1,0 +1,25 @@
+## 指北箭头和比例尺
+
+```
+gmt pscoast  ... -Tf92/42.1/1.5/2 -Lf92/39.9/40/200k+lkm --FONT_LABEL=11p ... >> $ps
+```
+
+- T[f|m]lon/lat/size/info
+
+	- [f/m]画图样式
+		- f: fancy mode
+		- m: magnetic rose
+		
+	- lon/lat/size：中心经纬度和大小
+	- info
+		- 1：东西南北四个方向
+		- 2：8个方向
+		- 3：16个方向
+		
+- L[f]lon/lat/slat/length+l*label*
+
+	- f画图样式：fancy
+	- lon/lat：画图的中心经纬度
+	- slat：比例尺采用纬度
+	- length：比例尺长度
+	- +l*label*：label,单位

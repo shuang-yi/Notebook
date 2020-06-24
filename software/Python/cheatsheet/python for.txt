@@ -1,0 +1,10 @@
+### for循环
+```python
+for i in range(1, 5): 
+	print i
+else:
+	print 'The for loop is over'
+```
+### 循环控制
+break会跳出for与while循环，并且不执行else中的语句
+continue会提前进入下一次for与while循环

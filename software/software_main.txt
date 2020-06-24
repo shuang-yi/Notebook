@@ -1,0 +1,11 @@
+# Mac
+## 系统
+dozer, 隐藏状态栏
+eaglefiler，整理文件
+Forklift， 文件管理
+
+##
+nvALT：记录
+
+# broken损坏, xclient.info
+sudo xattr -d com.apple.quarantine /Applications/xxxx.app

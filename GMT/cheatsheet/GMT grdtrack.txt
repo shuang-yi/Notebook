@@ -1,0 +1,3 @@
+## grdtrack
+
+gmt grdtrack ridge.txt -Gspac.nc -C400k/2k/10k+v -Sm+sstack.txt > table.txt
