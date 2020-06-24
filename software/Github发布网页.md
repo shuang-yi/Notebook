@@ -106,4 +106,24 @@ $ git commit -m "wrote a readme file"
 * `git clone git@github.com:github/hub.git`：相当于`init, remote add, pull`三个命令的缩写
 * `git push origin master`：保存到远端，remote名字为origin
 
+## 4. Git设置
+
+#### ignore
+
+文件名：.gitignore
+
+内容：
+
+> .DS_Store
+> *.m~
+> *.asv
+> gmt.history
+
+If a **file** is already tracked by **Git**, adding that **file** to your . **gitignore** isn't enough to **ignore** changes to the **file**.
+...
+Permanently *ignore* changes to a *file*
+
+1. Add the **file** in your . **gitignore**.
+2. Run the following command: `git rm --cached <file>`
+3. Commit the removal of the **file** and the updated . **gitignore** to your repo.
 
