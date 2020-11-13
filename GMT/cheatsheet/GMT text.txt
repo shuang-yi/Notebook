@@ -13,7 +13,7 @@ EOF
 - -G	填充色
 - -F[+a[angle]][+c[justify]][+f[font]][+h][+j[justify]][+l]
 默认情况下，文字水平，字体属性来自FONT_ANNOT_PRIMARY，并且以经纬度为中心。开关后面不接属性，将从文件中读入相应属性。
-	- +f to set the font (size,fontname,color)：-F+j+f7p,1,black=~0.5p,white, 白色描边
+	- +f to set the font (size,fontname,color)：-F+j+f7p,1,black=~0.5p,white, **白色描边**
 	- +h 字符内容为最近的 segment header 
 	- +l 字符内容为最近的segment label
 	- +c  从-R范围得到经纬度，如-F+cTL，得到画图范围左上角经纬度。
